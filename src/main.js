@@ -63,7 +63,6 @@ function sleep(ms){
 }
 
 async function bubleSort(array){
-
     let bars = document.getElementsByClassName("bubble");
 
     for(let i = 0; i <= array.length; i++){
@@ -130,24 +129,34 @@ async function selectionSort(array){
 
     for(let i = 0; i < array.length -1; i++){
         let minIndex = i;
-        for(let j = i + 1; j < array.length; j++){
-            if(array[j] < array[minIndex]){
-                minIndex = j;              
-                sleep(40)
-                
+        for(let j = i + 1; j < array.length; j++){ 
+          for( let k = 0; k < bars.length ; k++){
+            if(k !== j && k !== j + 1){
+              bars[k].style.backgroundColor = "rgb(137, 122, 243)";
             }
+          } 
+          if(array[j] < array[minIndex]){
+            minIndex = j; 
+            continue
+          }    
+          else if(array[j] >= array[minIndex]){
+            bars[j].style.height = array[j] * heightFactor + "px";
+            bars[j].style.backgroundColor = "lightcoral";              
+          }  
+          await sleep(20)
        }
         const temp = array[minIndex];
         array[minIndex] = array[i];
         array[i] = temp;
 
-
         bars[minIndex].style.height = array[minIndex] * heightFactor + "px";
         bars[minIndex].style.backgroundColor = "lightcoral"; 
+        
+        bars[i].style.height = array[i] * heightFactor + "px";
+        bars[i].style.backgroundColor = "lightcoral";
 
-        sleep(40)
+        await sleep(20)
     }
-
     return array
 }
 
@@ -157,8 +166,6 @@ sortBtn.addEventListener("click", async() =>{
     let sorted_array_bubble = bubleSort(unsort);
     sorted_array_bubble.then(d => {
         console.log(d);
-        console.log("unsortedArray!: ",unsort);
-        console.log("unsortedArray: ",unsortedArray);
     })
 })
 
@@ -166,8 +173,7 @@ sortBtnInsertion.addEventListener("click", async() =>{
     let unsort = [...unsortedArray];
     let sorted_array_Insertion = InsertionSort(unsort);
     sorted_array_Insertion.then(d => {
-        console.log("unsortedArray!: ",unsort);
-        console.log("unsortedArray: ",unsortedArray)
+        console.log(d);
     })
 })
 
