@@ -1,14 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="src/style.css">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort vizulaizer</title>
+</head>
+<body>
+    <div class="container">
+        <div id="bars-container" >
+
+        </div>
+
+        <div class="button-container">
+            <h2 class="button-heading">bubble sort</h2>
+            <div class="btn-conts">
+                <button id="randomize-array-btn"><p>Randomize</p></button>
+                <button id="sort-btn"><p>sort</p></button>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div id="bars-container-insertion" >
+
+        </div>
+
+        <div class="button-container">
+            <h2 class="button-heading">Insertion sort</h2>
+            <div class="btn-conts">
+                <button id="randomize-array-btn-insertion"><p>Randomize</p></button>
+                <button id="sort-btn-insertion"><p>sort</p></button>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div id="bars-container-selection" >
+
+        </div>
+
+        <div class="button-container">
+            <h2 class="button-heading">Selection sort</h2>
+            <div class="btn-conts">
+                <button id="randomize-array-btn-selection"><p>Randomize</p></button>
+                <button id="sort-btn-selection"><p>sort</p></button>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+    <script src="src/main.js"></script>
+</body>
 </html>
