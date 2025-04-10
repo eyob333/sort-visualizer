@@ -143,7 +143,7 @@ async function selectionSort(array){
             bars[j].style.height = array[j] * heightFactor + "px";
             bars[j].style.backgroundColor = "lightcoral";              
           }  
-          await sleep(20)
+          await sleep(1)
        }
         const temp = array[minIndex];
         array[minIndex] = array[i];
